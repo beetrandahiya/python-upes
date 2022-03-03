@@ -5,7 +5,10 @@ for i in range(n):
     name,grade1,grade2,grade3=inpstr.split()
     studs[name]=[int(grade1),int(grade2),int(grade3)]
 
+name=input()
 
 
-print(studs.keys)
+avg=sum(studs[name])/3.00
+
+print(avg)
     
