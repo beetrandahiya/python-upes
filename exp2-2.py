@@ -12,5 +12,5 @@ while i>0:
     else:
         runnerup=scores[i-1]
         break
-print(scores)
+
 print(runnerup)

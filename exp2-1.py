@@ -7,8 +7,7 @@ for i in range(n):
 
 name=input()
 
+avg=float(sum(studs[name])/3)
 
-avg=sum(studs[name])/3.00
-
-print(avg)
+print(round(avg,2))
     
