@@ -14,4 +14,8 @@ def fibbonaci(n):
         for i in range(2,n+1):
             fibb.append(fibb[i-1]+fibb[i-2])   
 
-    print(fibb)         
+    print(fibb)       
+
+#printing output
+print(add_natural(5))
+fibbonaci(5)  

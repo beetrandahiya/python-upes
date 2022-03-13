@@ -28,3 +28,6 @@ def traveler(t_id,t_name,bw,ey,noc):
         print(t_name)
         print("Detain Traveler for re-checking!")
 
+
+#printing output
+traveler(1,"John",30,2030,"valid")
