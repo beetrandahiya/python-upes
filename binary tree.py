@@ -74,7 +74,9 @@ Tree would look like:
 
 
 '''
-def print_tree(root, value="val", left="left", right="right"):
+
+''' Code from stackOverflow to print the binary tree '''
+def print_tree(root, value="value", left="left", right="right"):
     def display(root, value=value, left=left, right=right):
         """Returns list of strings, width, height, and horizontal coordinate of the root."""
         # No child.
@@ -124,6 +126,7 @@ def print_tree(root, value="val", left="left", right="right"):
     for line in lines:
         print(line)
         
-root.PrintTree()
+
+
 print(root.PostOrderTraversal(root))
 print_tree(root)
