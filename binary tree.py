@@ -19,6 +19,7 @@ class BinaryTree:
         else:
             self.value = value
 
+# Left --> Root --> Right
     def InOrderTraversal(self, root):
         res=[]
         if root:
@@ -27,6 +28,7 @@ class BinaryTree:
             res=res+self.InOrderTraversal(root.right)
         return res
 
+# Root --> Left --> Right
     def PreOrderTraversal(self, root):
         res=[]
         if root:
@@ -34,6 +36,8 @@ class BinaryTree:
             res+=self.PreOrderTraversal(root.left)
             res=res+self.PreOrderTraversal(root.right)
         return res
+
+#Left --> Right --> Root
     def PostOrderTraversal(self, root):
         res=[]
         if root:
@@ -70,5 +74,56 @@ Tree would look like:
 
 
 '''
+def print_tree(root, value="val", left="left", right="right"):
+    def display(root, value=value, left=left, right=right):
+        """Returns list of strings, width, height, and horizontal coordinate of the root."""
+        # No child.
+        if getattr(root, right) is None and getattr(root, left) is None:
+            line = '%s' % getattr(root, value)
+            width = len(line)
+            height = 1
+            middle = width // 2
+            return [line], width, height, middle
+
+        # Only left child.
+        if getattr(root, right) is None:
+            lines, n, p, x = display(getattr(root, left))
+            s = '%s' % getattr(root, value)
+            u = len(s)
+            first_line = (x + 1) * ' ' + (n - x - 1) * '_' + s
+            second_line = x * ' ' + '/' + (n - x - 1 + u) * ' '
+            shifted_lines = [line + u * ' ' for line in lines]
+            return [first_line, second_line] + shifted_lines, n + u, p + 2, n + u // 2
+
+        # Only right child.
+        if getattr(root, left) is None:
+            lines, n, p, x = display(getattr(root, right))
+            s = '%s' % getattr(root, value)
+            u = len(s)
+            first_line = s + x * '_' + (n - x) * ' '
+            second_line = (u + x) * ' ' + '\\' + (n - x - 1) * ' '
+            shifted_lines = [u * ' ' + line for line in lines]
+            return [first_line, second_line] + shifted_lines, n + u, p + 2, u // 2
+
+        # Two children.
+        left, n, p, x = display(getattr(root, left))
+        right, m, q, y = display(getattr(root, right))
+        s = '%s' % getattr(root, value)
+        u = len(s)
+        first_line = (x + 1) * ' ' + (n - x - 1) * '_' + s + y * '_' + (m - y) * ' '
+        second_line = x * ' ' + '/' + (n - x - 1 + u + y) * ' ' + '\\' + (m - y - 1) * ' '
+        if p < q:
+            left += [n * ' '] * (q - p)
+        elif q < p:
+            right += [m * ' '] * (p - q)
+        zipped_lines = zip(left, right)
+        lines = [first_line, second_line] + [a + u * ' ' + b for a, b in zipped_lines]
+        return lines, n + m + u, max(p, q) + 2, n + u // 2
+
+    lines, *_ = display(root, value, left, right)
+    for line in lines:
+        print(line)
+        
 root.PrintTree()
 print(root.PostOrderTraversal(root))
+print_tree(root)
