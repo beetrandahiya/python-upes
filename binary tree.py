@@ -54,11 +54,10 @@ class BinaryTree:
             self.right.PrintTree()
 
 root = BinaryTree(100)
-root.insert(50)
-root.insert(55)
-root.insert(60)
 root.insert(20)
-root.insert(52)
+root.insert(121)
+root.insert(10)
+root.insert(35)
 
 '''
 
@@ -128,5 +127,5 @@ def print_tree(root, value="value", left="left", right="right"):
         
 
 
-print(root.PostOrderTraversal(root))
+print(root.InOrderTraversal(root))
 print_tree(root)
