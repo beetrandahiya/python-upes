@@ -75,7 +75,8 @@ printf("in = %d \n",in);
 
 int main()
 {
-    int j=0;
+    int j;
+    j=0;
    while(j<1){
        printf("----------------------------------\n");
        printf("Enter 1 for insert \n Enter 2 for delete \n Enter 3 for display");
