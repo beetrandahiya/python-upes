@@ -1,13 +1,13 @@
 #include <stdio.h>
 
 int main(){
-
+    
 
 }
 
 int hash_fn(char SAPID[]){
     int l=strlen(SAPID);
-    int n=100*atoi(SAPID[0])+10*atoi(SAPID[1])+atoi(SAPID[2]);
+    int num=100*atoi(SAPID[l-3])+10*atoi(SAPID[l-2])+atoi(SAPID[l-1]);
     int a;
     a=sum_of_digits(num);
     while(a>10){
