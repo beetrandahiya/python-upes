@@ -1,5 +1,5 @@
 class Vehicle:
-    def __init__(self,name,max_speed,mileage):
+    def __init__(self,name,max_speed,mileage,color="white"):
         self.name=name
         self.max_speed=max_speed
         self.mileage=mileage
