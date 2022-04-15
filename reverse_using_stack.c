@@ -43,8 +43,7 @@ void display(st *s){
         printf("Stack is empty\n");
     }
     else{
-        int i;
-        for(i=s->top;i>=0;i--){
+        for(int i=0;i<=s->top;i++){
             printf("%c",s->data[i]);
         }
     }
