@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <stdbool.h>
 
 #define MAX 10
 
@@ -42,6 +44,7 @@ void display(){
         for(int i=front;i<=rear;i++){
             printf("%d ",items[i]);
         }
+        printf("\n----------------\n");
     }
 }
 
