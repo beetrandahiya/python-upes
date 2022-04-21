@@ -1,13 +1,4 @@
-links=[
-    ".in/metaversetujsjsbxj78xsnmsn",
-    "5uxj-ujsbxjs77q234v57xbsxsjbxjs09",
-    "gaqvzqvzgahhh87900vvrjkdt-cf",
-    "k_ssbjsbuhug795-tfgcfxnbhtfgg3477578"]
-    
-firststr="http://priyanuj09.lnkiy"
-
-from itertools import permutations
-
-linksp=list(permutations(links))
-print(linksp)
-    
+a=list(map(int,input().split())).sort()
+a1=[a[0],a[1],a[2],a[3]]
+a1=
+       
