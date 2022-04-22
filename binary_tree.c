@@ -55,3 +55,17 @@ void printTree(node* head){
     printTree(head->left);
     printTree(head->right);
 }
+
+
+void main(){
+
+    node* head = NULL;
+
+    makeTree(&head, 10);
+    insert(&head, 5);
+    insert(&head, 15);
+    insert(&head, 20);
+    insert(&head, 1);
+
+    printTree(head);
+}
