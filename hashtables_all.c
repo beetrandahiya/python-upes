@@ -49,6 +49,8 @@ void printHashTable(){
     }
 }
 
+//function to search for a key in the hashtable
+
 void search(int key){
     int index = hash(key, 10);
     node* temp = hashTable[index];
