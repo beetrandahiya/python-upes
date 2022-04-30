@@ -2,10 +2,10 @@
 #include<stdlib.h>
 
 // get number of vertices in graph
-
 int n;
 printf("Enter the number of vertices in the graph: ");
 scanf("%d", &n);
+
 
 // input the adjacency matrix
 int adj[n][n];
